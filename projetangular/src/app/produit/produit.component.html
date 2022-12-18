@@ -1,0 +1,132 @@
+    <app-navbar></app-navbar>
+
+    
+    <div class="container-fluid">
+        <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+               
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/produit']">
+                    <span data-feather="file"></span>
+                    Produits
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/categories']">
+                    <span data-feather="file"></span>
+                    categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/fournisseurs']">
+                    <span data-feather="shopping-cart"></span>
+                    fournisseurs
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/commande']">
+                    <span data-feather="users"></span>
+                    commandes
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/facture']">
+                    <span data-feather="bar-chart-2"></span>
+                    Facture
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/login']">
+                    <span data-feather="bar-chart-2"></span>
+                    Se déconnecter
+                    </a>
+                </li>
+            </ul>
+    
+            </div>
+        </nav>
+    
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Produits</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <div class="btn-group mr-2">
+                        
+                        <a [routerLink]="['/add-produit']" class="btn btn-small btn-primary">AjouterPeoduit</a>
+        
+                    </div> 
+                </div>
+            </div>
+            </div>
+    
+    <div class="" id="home">
+        <div class="container">
+            
+            
+            <!-- row -->
+            <div class="row tm-content-row tm-mt-big">
+                <div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+                    <div class="bg-white tm-block h-100">
+                        <div class="searchBox">
+
+                            <input class="searchInput" type="text" name="rech" placeholder="Rechercher..."  [(ngModel)]="searchText">
+                            <button class="searchButton">
+                              <i class="material-icons">
+                                <a >search</a>
+                              </i>
+                            </button>
+                          </div>
+                        <div class="table-responsive">
+                            
+                            <table class="table table-hover table-striped tm-table-striped-even mt-3">
+                                
+                                <thead>
+                                    <tr class="tm-bg-gray">
+                                        
+                                        <th scope="col">id_prd</th>
+                                        <th scope="col">date_ajout_prd</th>
+                                        <th scope="col">description_prd</th>
+                                        <th scope="col" class="text-center">lib_prde</th>
+                                        <th scope="col" class="text-center">prix_livraison</th>
+                                        <th scope="col">prix_prd</th>
+                                        <th scope="col">id_commande_prod </th>
+                                        <th scope="col">id_famille</th>
+                                        <th scope="col">id_labo </th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let produit of products | search : searchText">
+                                       
+                                        <td>{{produit.idPrd}}</td>
+                                        <td>{{produit.dateAjoutPrd}}</td>
+                                        <td>{{produit.descriptionPrd}}</td>
+                                        <td>{{produit.libPrd}}</td>
+                                        <td>{{produit.prixLivraison}}</td>
+                                        <td>{{produit.prixPrd}}</td>
+                                        <td>{{produit.idCommande_prod}}</td>
+                                        <td>{{produit.famille.libFamille}}</td>
+                                        <td>{{produit.laboratoire.libelleLabo}}</td>
+                                        <td><button class="btn btn-danger" (click)="deleteProuit(produit.idPrd)" >Delete</button> </td>
+                                        <td><button class="btn btn-danger" [routerLink]="['/add-produit']" >Edit</button> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+            
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+

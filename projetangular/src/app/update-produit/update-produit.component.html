@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+
+    
+<div class="container-fluid">
+  <div class="row">
+  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+          
+          <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/produit']">
+              <span data-feather="file"></span>
+              Produits
+          </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/categories']">
+              <span data-feather="file"></span>
+              categories
+              </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" [routerLink]="['fournisseurs']">
+              <span data-feather="shopping-cart"></span>
+              fournisseurs
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/commande']">
+              <span data-feather="users"></span>
+              commandes
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/facture']">
+              <span data-feather="bar-chart-2"></span>
+              Facture
+          </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Se déconnecter
+              </a>
+          </li>
+      </ul>
+
+      </div>
+  </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Edit produit</h1>
+       
+        </div>
+        <div class="col-md-8 order-md-1">
+            <form class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">date_ajout_prd</label>
+                  <input type="date" class="form-control" id="firstName" placeholder="" value="" required>
+                 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">lib_prd</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                
+                </div>
+              </div>
+      
+              <div class="mb-3">
+                <label for="username">description_prd</label>
+                <div class="input-group">
+                 
+                  <input type="text" class="form-control" id="username" required>
+                  
+                </div>
+              </div>
+      
+              
+      
+              <div class="mb-3">
+                <label for="address">prix_livraison</label>
+                <input type="number" class="form-control" id="address" placeholder="1234 Main St" required>
+            
+              </div>
+      
+              <div class="mb-3">
+                <label for="address">Phone</label>
+                <input type="text" class="form-control" id="address" placeholder="+216.." required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="address">prix_prd</label>
+                <input type="text" class="form-control" id="address" placeholder="" required>
+                
+              </div>
+      
+              
+             
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">save</button>
+            </form>
+          </div>
+        
+      
+              
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- https://jquery.com/download/ -->
+<script src="js/bootstrap.min.js"></script>
+<!-- https://getbootstrap.com/ -->
+<script>
+    $(function () {
+        $('.tm-product-name').on('click', function () {
+            window.location.href = "edit-product.html";
+        });
+    })
+    
+</script>
+

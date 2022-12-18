@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/produit']">
+              <span data-feather="file"></span>
+              Produits
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/categories']">
+              <span data-feather="file"></span>
+              categories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/fournisseurs']">
+              <span data-feather="shopping-cart"></span>
+              fournisseurs
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/commande']">
+              <span data-feather="users"></span>
+              commandes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/facture']">
+              <span data-feather="bar-chart-2"></span>
+              Facture
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">
+              <span data-feather="bar-chart-2"></span>
+              Se déconnecter
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Produits</h1>
+
+      </div>
+
+      <div class="" id="home">
+        <div class="container">
+
+          <!-- row -->
+          <div class="row tm-content-row tm-mt-big">
+            <div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+              <div class="bg-white tm-block h-100">
+
+                <form #lform="ngForm"(ngSubmit)="add(lform.value)">
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">date_ajout_prd</label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1" name="dateAjoutPrd">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">description_prd</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="descriptionPrd" rows="3"></textarea>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">lib_prd</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="libPrd" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">prix_livraison</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" name="prixLivraison" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">prix_prd</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" name="prixPrd" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">id_commande_prod </label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" name="idCommande_prod" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">id_famille</label>
+                    <input type="number" class="form-control" id="exampleFormControlInput1" name="famille.libFamille" ngModel>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">id_labo</label>
+                      <input type="number" class="form-control" id="exampleFormControlInput1" name="laboratoire.libelleLabo" ngModel>
+                    </div>
+
+                  </div>
+                  <button type="submit" class="btn btn-primary">SAVE</button>
+
+                </form>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div></div>
