@@ -26,9 +26,9 @@ response.subscribe((data)=>{
   
   this.users =data; 
   for(let user of this.users){
-    if(user.email_util != log.email_util){
+    if(user.emailUtil != log.email_util){
       alert('maa 5demech');
-    }else if(user.password_util != log.password_util){
+    }else if(user.passwordUtil != log.password_util){
       alert('mot passe 8altaa');
     }else{
       this.router.navigate(['/produit'])
